@@ -16,6 +16,6 @@ spec:
     namespace: default
   project: default
   source:
-    repoURL: https://github.com/jayanth-tjvrr/arlon-test.git
+    repoURL: https://github.com/jayanth-tjvrr/arlon-test
     path: bundles/calico
     targetRevision: HEAD
