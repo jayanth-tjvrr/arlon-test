@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: capi-static-eks-2-kafka-static
+  name: capi-static-eks-2-redis-static-bdl
   namespace: argocd
   finalizers:
   # This solves issue #17
@@ -17,5 +17,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/jayanth-tjvrr/arlon-test
-    path: clusters/capi-static-eks-2/workload/kafka-static
+    path: clusters/capi-static-eks-2/workload/redis-static-bdl
     targetRevision: HEAD
