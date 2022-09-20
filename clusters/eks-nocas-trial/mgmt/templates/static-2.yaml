@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: eks-nocas-trial-xenial-static
+  name: eks-nocas-trial-static-2
   namespace: argocd
   finalizers:
   # This solves issue #17
@@ -17,5 +17,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/jayanth-tjvrr/arlon-test
-    path: clusters/eks-nocas-trial/workload/xenial-static
+    path: clusters/eks-nocas-trial/workload/static-2
     targetRevision: HEAD
