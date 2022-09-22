@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: arlonctl-2-xenial
+  name: arlonctl-2-guestbook
   namespace: argocd
   finalizers:
   # This solves issue #17
@@ -17,5 +17,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/jayanth-tjvrr/arlon-test
-    path: clusters/arlonctl-2/workload/xenial
+    path: clusters/arlonctl-2/workload/guestbook
     targetRevision: HEAD
