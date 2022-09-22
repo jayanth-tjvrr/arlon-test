@@ -1,7 +1,0 @@
-arlon bundle create redis-dynamic --tags applications --desc "Redis App" --repo-url https://github.com/jayanth-tjvrr/arlon-test --repo-path bundles/redis
-
-arlon profile create dynamic-2 --repo-url https://github.com/jayanth-tjvrr/arlon-test --repo-base-path profiles --bundles redis-dynamic --desc "dynamic test 2" --tags examples
-
-arlon clusterspec create capi-eks-2 --api capi --cloud aws --type eks --kubeversion v1.22.9 --nodecount 2 --nodetype t2.medium --tags devel,test --desc "Demo" --sshkey shaunak-key-2 --region us-west-2
-
-arlon cluster deploy --repo-url https://github.com/jayanth-tjvrr/arlon-test --profile dynamic-2 --cluster-name capi-dynamic-eks-2 --cluster-spec capi-eks-2
