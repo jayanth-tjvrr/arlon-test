@@ -1,0 +1,21 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: arlonctl-7-guestbook
+  namespace: argocd
+  finalizers:
+  # This solves issue #17
+  - resources-finalizer.argocd.argoproj.io/foreground
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+  destination:
+    name: arlonctl-7
+    namespace: default
+  project: default
+  source:
+    repoURL: https://github.com/jayanth-tjvrr/arlon-test
+    path: clusters/arlonctl-7/workload/guestbook
+    targetRevision: HEAD
