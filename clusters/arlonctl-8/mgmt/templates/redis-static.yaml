@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: arlonctl-8-guestbook
+  name: arlonctl-8-redis-static
   namespace: argocd
   finalizers:
   # This solves issue #17
@@ -17,5 +17,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/jayanth-tjvrr/arlon-test
-    path: clusters/arlonctl-8/workload/guestbook
+    path: clusters/arlonctl-8/workload/redis-static
     targetRevision: HEAD
