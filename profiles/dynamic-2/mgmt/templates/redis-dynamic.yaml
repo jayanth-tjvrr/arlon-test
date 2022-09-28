@@ -19,3 +19,10 @@ spec:
     repoURL: https://github.com/jayanth-tjvrr/arlon-test
     path: bundles/redis
     targetRevision: HEAD
+    helm:
+      parameters:
+      # Pass cluster name to the bundle in case it needs it and is a Helm chart.
+      # Example: this is required by the CAPI cluster autoscaler.
+      # Use arlon prefix to avoid any conflicts with the bundle's own values.
+      - name: arlon.clusterName
+        value: {{ .Values.clusterName }}
