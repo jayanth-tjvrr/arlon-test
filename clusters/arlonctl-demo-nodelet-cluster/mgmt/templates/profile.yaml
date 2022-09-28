@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: arlonctl-demo-nodelet-cluster-profile-dynamic-2
+  name: arlonctl-demo-nodelet-cluster-profile-xenial-dynamic
   namespace: argocd
   finalizers:
   # This solves issue #17
@@ -17,11 +17,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/jayanth-tjvrr/arlon-test
-    path: profiles/dynamic-2/mgmt
+    path: profiles/xenial-dynamic/mgmt
     targetRevision: HEAD
     helm:
       parameters:
       - name: clusterName
         value: arlonctl-demo-nodelet-cluster
       - name: profileAppName
-        value: arlonctl-demo-nodelet-cluster-profile-dynamic-2
+        value: arlonctl-demo-nodelet-cluster-profile-xenial-dynamic
