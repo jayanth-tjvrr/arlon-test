@@ -24,9 +24,6 @@ spec:
   region: us-west-2 
   sshKeyName: jayanth 
   version: v1.23.8 
-  identityRef:
-    kind: AWSClusterStaticIdentity
-    name: provider
 ---
 apiVersion: cluster.x-k8s.io/v1beta1
 kind: MachineDeployment
