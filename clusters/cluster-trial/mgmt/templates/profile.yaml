@@ -1,0 +1,27 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-trial-profile-guestbbok-jayanth
+  namespace: argocd
+  finalizers:
+  # This solves issue #17
+  - resources-finalizer.argocd.argoproj.io/foreground
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  project: default
+  source:
+    repoURL: https://github.com/jayanth-tjvrr/arlon-test
+    path: profiles/guestbbok-jayanth/mgmt
+    targetRevision: HEAD
+    helm:
+      parameters:
+      - name: clusterName
+        value: cluster-trial
+      - name: profileAppName
+        value: cluster-trial-profile-guestbbok-jayanth
